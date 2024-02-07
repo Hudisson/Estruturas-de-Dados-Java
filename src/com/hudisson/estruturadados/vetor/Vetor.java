@@ -1,5 +1,8 @@
 package com.hudisson.estruturadados.vetor;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class Vetor {
     
     private String[] elementos;
@@ -32,10 +35,39 @@ public class Vetor {
 
          if(this.capacidadeEmUso < this.elementos.length){
             this.elementos[this.capacidadeEmUso] = valor;
-            this.capacidadeEmUso++;
+            this.capacidadeEmUso++; // [ 0, 1, 2, ... ,capacidade-1 ]
             return true;
          }
 
         return false;
+    }
+
+    /* Verifica tamanho do vetor */
+    public int tamanho(){
+        return this.capacidadeEmUso;
+    }
+
+    /* Imprimi elementos do vetor */
+    
+    // public String imprimir(){
+    //     return Arrays.toString(elementos);
+    // }
+
+    @Override
+    public String toString(){
+
+        StringBuilder s = new StringBuilder();
+        s.append("[");
+        for(int i = 0; i < this.capacidadeEmUso-1; i++){
+            s.append(this.elementos[i]);
+            s.append(", ");
+        }
+
+        if(this.capacidadeEmUso > 0){
+            s.append(this.elementos[this.capacidadeEmUso-1]);
+        }
+
+        s.append("]");
+        return s.toString();
     }
 }
