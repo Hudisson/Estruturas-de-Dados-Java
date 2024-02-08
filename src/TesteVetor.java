@@ -11,8 +11,14 @@ public class TesteVetor {
         vetor.adicionar("Rifle");   // 2
         vetor.adicionar("Mapa");    // 3
 
+
+
         System.out.println("Tamanho: "+ vetor.tamanho());
         System.out.println("Elementos: "+vetor);
+       
+
+        System.out.println("Existe: "+ vetor.buscaExite("Mapa"));
+        System.out.println("Existe na posição: "+ vetor.existeNaPosicao("Mapa"));
         System.out.println("Item: "+ vetor.buscaElemento(3));
         
         
