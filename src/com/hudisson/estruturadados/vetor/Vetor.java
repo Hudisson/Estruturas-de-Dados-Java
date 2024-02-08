@@ -35,7 +35,7 @@ public class Vetor {
 
          if(this.capacidadeEmUso < this.elementos.length){
             this.elementos[this.capacidadeEmUso] = valor;
-            this.capacidadeEmUso++; // [ 0, 1, 2, ... ,capacidade-1 ]
+            this.capacidadeEmUso++; 
             return true;
          }
 
@@ -70,4 +70,22 @@ public class Vetor {
         s.append("]");
         return s.toString();
     }
+
+    /* Obter elemento de uma posição do vetor */
+
+    public String buscaElemento(int posicao){
+        if(!(posicao >= 0 && posicao < capacidadeEmUso)){
+            throw new IllegalArgumentException("Posição inválida");
+        }
+        return this.elementos[posicao];
+    }
+
+    // public String getElemento(int posicao){
+    //     String item = "Não encontrado";
+    //     if(posicao >= 0 && posicao == capacidadeEmUso-1){
+    //         item = this.elementos[posicao];
+    //     }
+
+    //     return item;  
+    // 
 }
