@@ -88,4 +88,25 @@ public class Vetor {
 
     //     return item;  
     // 
+
+    /* Verficar se elemento existe no vetor */
+    public boolean buscaExite(String busca){
+        for(int i = 0; i < this.capacidadeEmUso; i++){
+            if(this.elementos[i].equals(busca)){
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public int existeNaPosicao(String busca){
+        for(int i = 0; i < this.capacidadeEmUso; i++){
+            if(this.elementos[i].equals(busca)){
+                return i; // Existe na posição [i]
+            }
+        }
+
+        return -1; // Não existe em nehuma posição
+    }
 }
