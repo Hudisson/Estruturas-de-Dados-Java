@@ -1,16 +1,19 @@
 package com.hudisson.estruturadados.vetor;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
 public class Vetor {
     
     private String[] elementos;
     private int capacidadeEmUso;
+    private int capacidadeDefinida;
 
     public Vetor(int capacidade){
         this.elementos = new String[capacidade];
         this.capacidadeEmUso = 0;
+        this.capacidadeDefinida = capacidade;
+    }
+
+    public int capacidadeDefinda(){
+        return this.capacidadeDefinida;
     }
 
     // public void adicionar(String valor){
@@ -31,14 +34,29 @@ public class Vetor {
     //     }
     // }
 
-      public boolean adicionar(String valor){
+    public boolean adicionar(String valor){
 
-         if(this.capacidadeEmUso < this.elementos.length){
+        if(this.capacidadeEmUso < this.elementos.length){
             this.elementos[this.capacidadeEmUso] = valor;
             this.capacidadeEmUso++; 
             return true;
-         }
+        }
 
+        return false;
+    }
+
+    /* Método para adicionar um novo elemento ao vetor sem perde os outros elementos */
+    public boolean adicionar(int posicao, String valor){
+        if(!(posicao >= 0 && posicao < this.capacidadeEmUso)){
+            throw new IllegalArgumentException("Posição inválida");
+        }
+
+        // mover os elementos
+        for(int i = this.tamanho()-1; i >= posicao; i--){
+            this.elementos[i+1] = this.elementos[i];
+        }
+        this.elementos[posicao] = valor;
+        this.capacidadeEmUso++;
         return false;
     }
 
@@ -100,7 +118,7 @@ public class Vetor {
         return false;
     }
 
-    /*Verficar se elemento existe no vetor , se existir, retornar a posição, se não, retornar -1*/
+    /* Verficar se elemento existe no vetor , se existir, retornar a posição, se não, retornar -1*/
     public int existeNaPosicao(String busca){
         for(int i = 0; i < this.capacidadeEmUso; i++){
             if(this.elementos[i].equals(busca)){
@@ -110,4 +128,6 @@ public class Vetor {
  
         return -1; // Não existe em nehuma posição
     }
+
+    /* Adicionar elementos em qualquer posição do vetor  */
 }
