@@ -4,7 +4,7 @@ public class TesteVetor {
     
     public static void main(String[] args) throws Exception {
         
-        Vetor vetor = new Vetor(10);
+        Vetor vetor = new Vetor(5);
         
         vetor.adicionar("Faca");    // 0
         vetor.adicionar("Pistola"); // 1
@@ -14,8 +14,8 @@ public class TesteVetor {
 
 
 
-        System.out.println("Tamanho: "+ vetor.tamanho());
-        System.out.println("Capacidade: "+vetor.capacidadeDefinda());
+        System.out.println("Tamanho em uso: "+ vetor.tamanho());
+        System.out.println("Capacidade Definida: "+vetor.capacidadeDefinda());
         System.out.println("---------------------------------");
         // System.out.println("Existe: "+ vetor.buscaExite("Mapa"));
         // System.out.println("Existe na posição: "+ vetor.existeNaPosicao("Mapa"));
@@ -24,9 +24,5 @@ public class TesteVetor {
         System.out.println("Elementos: "+vetor);
         vetor.adicionar(4, "TESTE-NOVO");
         System.out.println("Elementos: "+vetor);
-
-        System.out.println("---------------------------------");
-        System.out.println("Tamanho: "+ vetor.tamanho());
-        System.out.println("Capacidade: "+vetor.capacidadeDefinda());
     }
 }
