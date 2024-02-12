@@ -9,11 +9,28 @@ public class Vetor {
     public Vetor(int capacidade){
         this.elementos = new String[capacidade];
         this.capacidadeEmUso = 0;
-        this.capacidadeDefinida = capacidade;
     }
 
+    /* Verificar capacidade definida */
     public int capacidadeDefinda(){
-        return this.capacidadeDefinida;
+        return this.capacidadeDefinida = this.elementos.length; 
+    }
+
+    /* Verifica tamanho do vetor */
+    public int tamanho(){
+        return this.capacidadeEmUso;
+    }
+
+    /* Método para aumentar a caacidade do vetor */
+    private void aumentarCapacidade(){
+        if(this.tamanho() == this.elementos.length){
+            String[] novosElementos = new String[this.elementos.length * 2];
+            for(int i = 0; i < this.elementos.length; i++){
+                novosElementos[i] = this.elementos[i];
+            }
+
+            this.elementos = novosElementos;
+        }
     }
 
     // public void adicionar(String valor){
@@ -36,6 +53,8 @@ public class Vetor {
 
     public boolean adicionar(String valor){
 
+        this.aumentarCapacidade();
+
         if(this.capacidadeEmUso < this.elementos.length){
             this.elementos[this.capacidadeEmUso] = valor;
             this.capacidadeEmUso++; 
@@ -47,6 +66,7 @@ public class Vetor {
 
     /* Método para adicionar um novo elemento ao vetor sem perde os outros elementos */
     public boolean adicionar(int posicao, String valor){
+        this.aumentarCapacidade();
         if(!(posicao >= 0 && posicao < this.capacidadeEmUso)){
             throw new IllegalArgumentException("Posição inválida");
         }
@@ -60,13 +80,8 @@ public class Vetor {
         return false;
     }
 
-    /* Verifica tamanho do vetor */
-    public int tamanho(){
-        return this.capacidadeEmUso;
-    }
 
     /* Imprimi elementos do vetor */
-    
     // public String imprimir(){
     //     return Arrays.toString(elementos);
     // }
@@ -90,7 +105,6 @@ public class Vetor {
     }
 
     /* Obter elemento de uma posição do vetor */
-
     public String buscaElemento(int posicao){
         if(!(posicao >= 0 && posicao < capacidadeEmUso)){
             throw new IllegalArgumentException("Posição inválida");
