@@ -1,13 +1,13 @@
 package com.hudisson.estruturadados.vetor;
 
-public class Vetor {
+public class VetorObjeto {
     
-    private String[] elementos;
+    private Object[] elementos;
     private int capacidadeEmUso;
     private int capacidadeDefinida;
 
-    public Vetor(int capacidade){
-        this.elementos = new String[capacidade];
+    public VetorObjeto(int capacidade){
+        this.elementos = new Object[capacidade];
         this.capacidadeEmUso = 0;
     }
 
@@ -24,7 +24,7 @@ public class Vetor {
     /* Método para aumentar a caacidade do vetor */
     private void aumentarCapacidade(){
         if(this.tamanho() == this.elementos.length){
-            String[] novosElementos = new String[this.elementos.length * 2];
+            Object[] novosElementos = new Object[this.elementos.length * 2];
             for(int i = 0; i < this.elementos.length; i++){
                 novosElementos[i] = this.elementos[i];
             }
@@ -33,25 +33,7 @@ public class Vetor {
         }
     }
 
-    // public void adicionar(String valor){
-    //     for(int i = 0; i < this.elementos.length; i++){
-    //         if(this.elementos[i] == null){
-    //             this.elementos[i] = valor;
-    //             break;
-    //         }
-    //     }
-    // }
-
-    // public void adicionar(String valor) throws Exception{
-    //     if(this.capacidadeEmUso < this.elementos.length){
-    //         this.elementos[this.capacidadeEmUso] = valor;
-    //         this.capacidadeEmUso+=1;
-    //     }else{
-    //         throw new Exception("Limite máximo atingido");
-    //     }
-    // }
-
-    public boolean adicionar(String valor){
+    public boolean adicionar(Object valor){
 
         this.aumentarCapacidade();
 
@@ -65,7 +47,7 @@ public class Vetor {
     }
 
     /* Método para adicionar um novo elemento ao vetor sem perde os outros elementos */
-    public boolean adicionar(int posicao, String valor){
+    public boolean adicionar(int posicao, Object valor){
         this.aumentarCapacidade();
         if(!(posicao >= 0 && posicao < this.capacidadeEmUso)){
             throw new IllegalArgumentException("Posição inválida");
@@ -94,12 +76,6 @@ public class Vetor {
         this.capacidadeEmUso--; // elimina a úlima posição que fiaca sobrando(elementos duplicados); 
     }
 
-
-    /* Imprimi elementos do vetor */
-    // public String imprimir(){
-    //     return Arrays.toString(elementos);
-    // }
-
     @Override
     public String toString(){
 
@@ -119,24 +95,15 @@ public class Vetor {
     }
 
     /* Obter elemento de uma posição do vetor */
-    public String buscaElemento(int posicao){
+    public Object buscaElemento(int posicao){
         if(!(posicao >= 0 && posicao < capacidadeEmUso)){
             throw new IllegalArgumentException("Posição inválida");
         }
         return this.elementos[posicao];
     }
 
-    // public String getElemento(int posicao){
-    //     String item = "Não encontrado";
-    //     if(posicao >= 0 && posicao == capacidadeEmUso-1){
-    //         item = this.elementos[posicao];
-    //     }
-
-    //     return item;  
-    // 
-
     /* Verficar se elemento existe no vetor: retorna true o false*/
-    public boolean buscaExite(String busca){
+    public boolean buscaExite(Object busca){
         for(int i = 0; i < this.capacidadeEmUso; i++){
             if(this.elementos[i].equals(busca)){
                 return true;
@@ -147,7 +114,7 @@ public class Vetor {
     }
 
     /* Verficar se elemento existe no vetor , se existir, retornar a posição, se não, retornar -1*/
-    public int existeNaPosicao(String busca){
+    public int existeNaPosicao(Object busca){
         for(int i = 0; i < this.capacidadeEmUso; i++){
             if(this.elementos[i].equals(busca)){
                 return i; // Existe na posição [i]
