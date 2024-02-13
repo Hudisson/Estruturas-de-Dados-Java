@@ -80,6 +80,20 @@ public class Vetor {
         return false;
     }
 
+    /* Método para remover elementos do array */
+    public void remove(int posicao){
+        if(!(posicao >= 0 && posicao < this.capacidadeEmUso)){
+            throw new IllegalArgumentException("Posição inválida");
+        }
+
+        // Move os elementos para à esquerda no vetor
+        for(int i =  posicao; i < tamanho()-1; i++){
+            this.elementos[i] = this.elementos[i+1];
+        }
+
+        this.capacidadeEmUso--; // elimina a úlima posição que fiaca sobrando(elementos duplicados); 
+    }
+
 
     /* Imprimi elementos do vetor */
     // public String imprimir(){

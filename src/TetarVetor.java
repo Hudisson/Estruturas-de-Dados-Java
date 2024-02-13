@@ -33,5 +33,18 @@ public class TetarVetor {
         System.out.println("Elementos: "+meuArray);
         System.out.println("-------------------------------------------------------");
 
+        meuArray.remove(4);
+        meuArray.remove(0);
+
+        System.out.println("Capacidade definda: "+ meuArray.capacidadeDefinda());
+        System.out.println("Tamanho em uso....: "+ meuArray.tamanho());
+        System.out.println("Elementos: "+meuArray);
+        System.out.println("-------------------------------------------------------");
+
+        
+        System.out.println("Últimmo elemento:"+ meuArray.buscaElemento(meuArray.tamanho()-1));
+
+        System.out.println("-------------------------------------------------------");
+
     }
 }
