@@ -14,6 +14,17 @@ public class VetorGenerico {
 
         System.out.println("\nNomes: "+ nome);
 
+        String busca = "TEXTO";
+
+        if(nome.buscaExite(busca) == true){
+
+            System.out.println("\nContém: SIM, na posição: " + nome.existeNaPosicao(busca) + "\n");
+
+        }else{
+
+            System.out.println("\nContém: NÃO\n");
+        }
+
     }
     
 }
