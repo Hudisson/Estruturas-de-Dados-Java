@@ -110,14 +110,8 @@ public class Lista<TIPO> {
         }
     
         /* Verficar se elemento existe no vetor: retorna true o false*/
-        public boolean buscaExite(Object busca){
-            for(int i = 0; i < this.capacidadeEmUso; i++){
-                if(this.elementos[i].equals(busca)){
-                    return true;
-                }
-            }
-    
-            return false;
+        public boolean buscaExite(TIPO busca){
+            return existeNaPosicao(busca) >= 0;
         }
     
         /* Verficar se elemento existe no vetor , se existir, retornar a posição, se não, retornar -1*/
