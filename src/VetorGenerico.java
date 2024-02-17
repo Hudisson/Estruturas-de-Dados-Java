@@ -11,10 +11,11 @@ public class VetorGenerico {
         nome.adicionar("Beltrano");
 
         nome.adicionar(2, "TEXTO");
+        nome.adicionar(2,"Fulano");
 
         System.out.println("\nNomes: "+ nome);
 
-        String busca = "TEXTO";
+        String busca = "Fulano";
 
         if(nome.buscaExite(busca) == true){
 
@@ -25,6 +26,8 @@ public class VetorGenerico {
             System.out.println("\nContém: NÃO\n");
         }
 
+       System.out.println("Último vez que aparece no array - indice: "+nome.ultimoIndice(busca));
+       System.out.println("Tamanho: "+nome.tamanho());
     }
     
 }
