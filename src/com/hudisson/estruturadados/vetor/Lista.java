@@ -125,4 +125,17 @@ public class Lista<TIPO> {
             return -1; // Não existe em nehuma posição
         }
 
+        /* Último indice em que um item aparece na lista */
+        public int ultimoIndice(TIPO valor){
+
+            // Retorna -1 se não existir ou retorna o último indice que o elemento aparece.
+            for(int i = this.tamanho()-1; i >=0; i--){
+                if(this.elementos[i].equals(valor)){
+                    return i;
+                }
+            }
+
+            return -1;
+        }
+
 }
