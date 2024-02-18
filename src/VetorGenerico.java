@@ -28,6 +28,7 @@ public class VetorGenerico {
 
        System.out.println("Último vez que aparece no array - indice: "+nome.ultimoIndice(busca));
        System.out.println("Tamanho: "+nome.tamanho());
+
     }
     
 }
