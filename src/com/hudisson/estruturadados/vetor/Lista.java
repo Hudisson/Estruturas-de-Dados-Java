@@ -82,6 +82,30 @@ public class Lista<TIPO> {
     
             this.capacidadeEmUso--; // elimina a úlima posição que fiaca sobrando(elementos duplicados); 
         }
+
+        /* Remove o elemento pelo nome apartir da primeira ocorrência */
+        public boolean removerElemento(TIPO valor){
+            // verificar se o elemento exite
+            if(buscaExite(valor) == true ){
+                remove(existeNaPosicao(valor));
+                return true;
+            }
+            return false;
+        }
+
+        /* Remove elemetos repetidos deixando apenas um igual ao iten buscado */
+        public boolean removeClones(TIPO valor){
+            if(buscaExite(valor) == true){
+                for(int i = 0; i < tamanho(); i++){
+                    if(this.elementos[i] == valor){
+                        remove(i);
+                    }
+                 }
+                 return true;
+            }
+
+            return false;
+        }
     
         @Override
         public String toString(){
