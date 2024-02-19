@@ -27,5 +27,10 @@ public class TesteVetorRemover {
         System.out.println("Não removido");
         System.out.println("\n\nItens: "+ itens.toString()+"\n\n");
        }
+
+       System.out.println("---------------------------------------------------------------");
+
+        itens.limpar();
+        System.out.println("Itens: "+itens.toString());
     }
 }

@@ -106,6 +106,15 @@ public class Lista<TIPO> {
 
             return false;
         }
+
+        /* Remove todos os elementos do array */
+        public void limpar(){
+               
+            //this.elementos = (TIPO[]) new Object[this.elementos.length];  // Remove os elemento passando o valor null para todos os indeces do array
+
+            this.capacidadeEmUso = 0; // Remove os elementos passando o tamanho da capacidade do array para igual a 0
+        }
+           
     
         @Override
         public String toString(){
