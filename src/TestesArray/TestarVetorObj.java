@@ -1,3 +1,4 @@
+package TestesArray;
 import com.hudisson.estruturadados.vetor.VetorObjeto;
 
 public class TestarVetorObj {
