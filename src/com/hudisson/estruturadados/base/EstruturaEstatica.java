@@ -25,6 +25,11 @@ public class EstruturaEstatica<TIPO> {
         return this.capacidadeEmUso;
     }
 
+    /* Verifica se array está vazio */
+    public boolean estaVazio(){
+        return tamanho() == 0;
+    }
+
     @Override
     public String toString() {
 
