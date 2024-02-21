@@ -2,16 +2,16 @@ package com.hudisson.estruturadados.base;
 
 public class EstruturaEstatica<TIPO> {
 
-    private TIPO[] elementos;
-    private int capacidadeEmUso;
-    private int capacidadeDefinida;
+    protected TIPO[] elementos;
+    protected int capacidadeEmUso;
+    protected int capacidadeDefinida;
 
-    public EstruturaEstatica(int capacidade) {
+    protected EstruturaEstatica(int capacidade) {
         this.elementos = (TIPO[]) new Object[capacidade];
         this.capacidadeEmUso = 0;
     }
 
-    public EstruturaEstatica() {
+    protected EstruturaEstatica() {
         this(10);
     }
 
