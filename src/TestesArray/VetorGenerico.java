@@ -1,10 +1,11 @@
-import com.hudisson.estruturadados.vetor.Lista;
+package TestesArray;
+import com.hudisson.estruturadados.vetor.ListaOld;
 
 public class VetorGenerico {
     
     public static void main(String[] args) throws Exception {
       
-        Lista<String> nome = new Lista<String>(3);
+        ListaOld<String> nome = new ListaOld<String>(3);
 
         nome.adicionar("Fulano");
         nome.adicionar("Ciclano");

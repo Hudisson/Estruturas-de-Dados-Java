@@ -1,8 +1,9 @@
-import com.hudisson.estruturadados.vetor.Lista;
+package TestesArray;
+import com.hudisson.estruturadados.vetor.ListaOld;
 
 public class TesteVetorRemover {
     public static void main(String[] args) throws Exception {
-        Lista<String> itens = new Lista<String>(8);
+        ListaOld<String> itens = new ListaOld<String>(8);
 
         itens.adicionar("Mouse");
         itens.adicionar("Teclado");

@@ -1,3 +1,4 @@
+package TestesArray;
 import com.hudisson.estruturadados.vetor.Vetor;
 
 public class TetarVetor {
