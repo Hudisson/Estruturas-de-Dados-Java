@@ -16,5 +16,6 @@ public class Pilha<TIPO> extends EstruturaEstatica<TIPO> {
     public void empilhar(TIPO valor){
         super.adicionar(valor);
     }
+
     
 }

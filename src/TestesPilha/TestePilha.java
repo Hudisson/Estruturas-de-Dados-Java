@@ -15,6 +15,14 @@ public class TestePilha {
 
         System.out.println("Cartas: "+games.toString());
         System.out.println("Tamanho em uso: "+ games.tamanho());
+        
+        System.out.println("A pilha está vazia? ");
+        if(games.estaVazio()){
+            System.out.println("SIM ");
+        }else{
+            System.out.println("NÃO ");
+        }
+       
     }
 
 }
