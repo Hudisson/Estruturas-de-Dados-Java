@@ -17,5 +17,11 @@ public class Pilha<TIPO> extends EstruturaEstatica<TIPO> {
         super.adicionar(valor);
     }
 
-    
+    /*Verificar elemento do topo */
+    public TIPO topo(){
+        if(this.estaVazio()){
+            return null;
+        }
+        return super.elementos[(super.capacidadeEmUso)-1];
+    }
 }
