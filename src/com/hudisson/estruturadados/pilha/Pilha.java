@@ -17,11 +17,22 @@ public class Pilha<TIPO> extends EstruturaEstatica<TIPO> {
         super.adicionar(valor);
     }
 
-    /*Verificar elemento do topo */
+    /*Verificar elemento do topo (Peek)*/
     public TIPO topo(){
         if(this.estaVazio()){
             return null;
         }
         return super.elementos[(super.capacidadeEmUso)-1];
+    }
+    /* Remover elemento do topo */
+    public TIPO desempilhar(){
+
+      if(this.estaVazio()){
+        return null;
+      }  
+
+    //   TIPO elemento = this.elementos[(super.capacidadeEmUso)-1];
+    //   this.capacidadeEmUso--;
+      return this.elementos[capacidadeEmUso--];
     }
 }

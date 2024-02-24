@@ -2,8 +2,7 @@ package TestesPilha;
 
 import com.hudisson.estruturadados.pilha.Pilha;
 
-public class TestePilha {
-
+public class TestePilha2 {
     public static void main(String[] args) throws Exception {
         Pilha<String> games = new Pilha<String>();
 
@@ -17,16 +16,11 @@ public class TestePilha {
         System.out.println("\nGames: " + games.toString());
         System.out.println("Tamanho em uso: " + games.tamanho());
 
-        System.out.println("A pilha está vazia? ");
-        if (games.estaVazio()) {
-            System.out.println("SIM ");
-        } else {
-            System.out.println("NÃO ");
-        }
+        System.out.println("\nElemento do topo: "+games.topo());
+        System.out.println("Remover elemento do topo: "+games.desempilhar());
 
-        System.out.println("Elemento do topo: " + games.topo());
-
-
+        System.out.println("\nGames: " + games.toString());
+        System.out.println("Tamanho em uso: " + games.tamanho());
+        System.out.println("Elemento do topo: "+games.topo());
     }
-
 }
