@@ -24,7 +24,7 @@ public class Pilha<TIPO> extends EstruturaEstatica<TIPO> {
         }
         return super.elementos[(super.capacidadeEmUso)-1];
     }
-    /* Remover elemento do topo */
+    /* Remover elemento do topo (pop) */
     public TIPO desempilhar(){
 
       if(this.estaVazio()){
