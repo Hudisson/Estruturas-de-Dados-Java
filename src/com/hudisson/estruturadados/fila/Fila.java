@@ -14,5 +14,9 @@ public class Fila<TIPO> extends EstruturaEstatica<TIPO>{
         super(capacidade);
     }
     
+    /* Adicionar um elemento na fila - Enfileirar (Queues) */
+    public void enfileirar(TIPO valor){
+        super.adicionar(valor);
+    }
 
 }

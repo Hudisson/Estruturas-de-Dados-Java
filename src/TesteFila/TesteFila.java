@@ -10,7 +10,17 @@ public class TesteFila{
 
         System.out.println("\nCapacidade definida: "+pessoas.capacidadeDefinda());
         System.out.println("Tamanho em uso.......: "+pessoas.tamanho());
+        System.out.println("A Fila está vazia? "+ pessoas.estaVazio());
+
+        System.out.println("\nEnfileirar");
+        pessoas.enfileirar("Fulano");
+        pessoas.enfileirar("Ciclano");
+        pessoas.enfileirar("Beltrano");
+
+        System.out.println("\nTamanho em uso.......: "+pessoas.tamanho());
         System.out.println("A Fila está vazia: "+ pessoas.estaVazio());
+        System.out.println("Fila: "+pessoas);
+        
         
     }
 }
