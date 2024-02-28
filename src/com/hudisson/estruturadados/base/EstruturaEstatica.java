@@ -6,6 +6,7 @@ public class EstruturaEstatica<TIPO> {
     protected int capacidadeEmUso;
     protected int capacidadeDefinida;
 
+    @SuppressWarnings("unchecked")
     protected EstruturaEstatica(int capacidade) {
         this.elementos = (TIPO[]) new Object[capacidade];
         this.capacidadeEmUso = 0;
@@ -48,6 +49,7 @@ public class EstruturaEstatica<TIPO> {
         return s.toString();
     }
 
+    /* Adiciona no final */
     protected boolean adicionar(TIPO valor) {
 
         this.aumentarCapacidade();
@@ -79,7 +81,8 @@ public class EstruturaEstatica<TIPO> {
         return false;
     }
 
-    /* Método para aumentar a caacidade do vetor */
+    /* Método para aumentar a capacidade do vetor */
+    @SuppressWarnings("unchecked")
     private void aumentarCapacidade() {
         if (this.tamanho() == this.elementos.length) {
             TIPO[] novosElementos = (TIPO[]) new Object[this.elementos.length * 2];
