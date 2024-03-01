@@ -19,4 +19,9 @@ public class Fila<TIPO> extends EstruturaEstatica<TIPO>{
         super.adicionar(valor);
     }
 
+    /* Verificar elemento do início da fila (peek) */
+    public TIPO espiar(){
+        return this.elementos[0]; // Retorna o elemento do inicio da fial ou nulo caso a fila esteja vazia.
+    }
+
 }
