@@ -20,7 +20,7 @@ public class TesteFila{
         System.out.println("\nTamanho em uso.......: "+pessoas.tamanho());
         System.out.println("A Fila está vazia: "+ pessoas.estaVazio());
         System.out.println("Fila: "+pessoas);
-        
-        
+
+        System.out.println("\nElemento do início da fila: "+pessoas.espiar());
     }
 }
