@@ -22,5 +22,17 @@ public class TesteFila{
         System.out.println("Fila: "+pessoas);
 
         System.out.println("\nElemento do início da fila: "+pessoas.espiar());
+
+        System.out.println("\nDesenfileirar: ");
+        System.out.println("Removido: "+pessoas.desenfileirar());
+        System.out.println("Fila: "+pessoas);
+        System.out.println("Removido: "+pessoas.desenfileirar());
+        System.out.println("Fila: "+pessoas);
+        System.out.println("Removido: "+pessoas.desenfileirar());
+        System.out.println("Fila: "+pessoas);
+        System.out.println("Removido: "+pessoas.desenfileirar());
+        System.out.println("Fila: "+pessoas);
+
+
     }
 }
