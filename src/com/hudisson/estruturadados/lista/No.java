@@ -22,8 +22,16 @@ public class No<TIPO> {
         return elemento;
     }
 
+    public void setElemento(TIPO elemento) {
+        this.elemento = elemento;
+    }
+
     public No<TIPO> getProximo() {
         return proximo;
+    }
+
+    public void setProximo(No<TIPO> proximo) {
+        this.proximo = proximo;
     }
 
     @Override
