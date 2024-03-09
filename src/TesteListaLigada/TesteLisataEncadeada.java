@@ -9,9 +9,11 @@ public class TesteLisataEncadeada {
         ListaEncadeada<Integer> lista = new ListaEncadeada<Integer>();
         lista.adicionar(1);
         lista.adicionar(2);
+        lista.adicionar(3);
+        lista.adicionar(4);
         // lista.adicionar(3);
     
-        System.out.println("\nLista........: "+lista);
+        System.out.println("\nLista........: "+lista.toString());
         System.out.println("Tamnho da lista: "+lista.getTamanho());
     }
 

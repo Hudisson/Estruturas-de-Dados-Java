@@ -6,7 +6,7 @@ public class ListaEncadeada<TIPO> {
     private No<TIPO> ultimo;
     private int tamanho = 0;
 
-    gi/* Inserir no final da lista encadeada */
+    /* Inserir no final da lista encadeada */
     public void adicionar(TIPO elemento){
 
         No<TIPO> celula = new No<TIPO>(elemento);
@@ -26,10 +26,27 @@ public class ListaEncadeada<TIPO> {
         return this.tamanho;
     }
 
-    /* Método que imprimi a lista */
+    /* Método que imprimi a lista (Percorrer a lista) */
     @Override
     public String toString() {
-        return "ListaEncadeada [inicio=" + inicio + "]";
+
+        if(tamanho == 0){
+            return "[]";
+        }
+
+        StringBuilder builder = new StringBuilder();
+
+        No<TIPO> atual = this.inicio;
+
+       
+        for(int i = 0; i < this.tamanho-1; i++){
+            builder.append(atual.getElemento()).append(", ");
+            atual = atual.getProximo();
+        }
+        builder.append(atual.getElemento());
+
+        //return "ListaEncadeada [inicio=" + inicio + "]";
+        return builder.toString();
     }
 
 }
