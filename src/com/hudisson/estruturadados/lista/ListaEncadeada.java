@@ -26,6 +26,22 @@ public class ListaEncadeada<TIPO> {
         return this.tamanho;
     }
 
+    /* Limpa a lista */
+    public void limpar(){
+
+        /* define os valores de cada nó como null */
+       for(No<TIPO> atual = this.inicio; atual != null;){
+            No<TIPO> proximoNo = atual.getProximo();
+            atual.setElemento(null);
+            atual.setProximo(null);
+            atual = proximoNo;
+       }
+
+       this.inicio = null;
+       this.ultimo = null;
+       this.tamanho = 0;
+    }
+
     /* Método que imprimi a lista (Percorrer a lista) */
     @Override
     public String toString() {
@@ -45,7 +61,6 @@ public class ListaEncadeada<TIPO> {
         }
         builder.append(atual.getElemento());
 
-        //return "ListaEncadeada [inicio=" + inicio + "]";
         return builder.toString();
     }
 
