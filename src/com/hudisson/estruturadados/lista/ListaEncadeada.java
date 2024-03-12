@@ -5,6 +5,7 @@ public class ListaEncadeada<TIPO> {
     private No<TIPO> inicio;
     private No<TIPO> ultimo;
     private int tamanho = 0;
+    private final int NAO_ENCONTRADO = -1;
 
     /* Inserir no final da lista encadeada */
     public void adicionar(TIPO elemento){
@@ -24,6 +25,44 @@ public class ListaEncadeada<TIPO> {
     /* Método para obter o tamanho da lista */
     public int getTamanho(){
         return this.tamanho;
+    }
+
+    /* Busca na lista por posição e retorna o elemento */
+    private No<TIPO> bucarNo(int posicao){
+
+            if(!(posicao >= 0 && posicao <= this.tamanho)){
+            throw new IllegalArgumentException("NÃO EXISTE");
+        }
+
+        No<TIPO> noAtual = this.inicio;
+        for(int i = 0; i < posicao; i++){
+            noAtual = noAtual.getProximo();
+        }
+        
+        return noAtual;
+    }
+
+    public TIPO buscarPosicao(int posicao){
+        return this.bucarNo(posicao).getElemento();
+    }
+
+    /* Pesquisa se um determinado elemento existe na lista  */
+    public int buscarElemento(TIPO elemento){
+
+        No<TIPO> noAtual = this.inicio;
+        int posicao = 0;
+
+        while (noAtual != null) {
+
+            if(noAtual.getElemento().equals(elemento)){
+                return posicao;
+            }
+            posicao++;
+            noAtual = noAtual.getProximo();
+
+        }
+
+        return NAO_ENCONTRADO;
     }
 
     /* Limpa a lista */
