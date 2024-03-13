@@ -22,6 +22,43 @@ public class ListaEncadeada<TIPO> {
         this.tamanho++;
     }
 
+    /* Adicionar em qualquer posição da lista encadeada */
+    public void adicionar(int posicao, TIPO elemento){
+
+        if(posicao < 0 || posicao > this.tamanho){
+            throw new IllegalArgumentException("Posição inválida");
+        }
+
+        if(posicao == 0){ // se a lista está vazia
+
+            this.adicionaInicio(elemento);
+
+        }else if(posicao == this.tamanho){ // adicionar no final
+            this.adicionar(elemento);
+
+        }else{ // adicionar no meio
+            No<TIPO> noAnterior = this.bucarNo(posicao);
+            No<TIPO> proximNo = noAnterior.getProximo();
+            No<TIPO> novoNo = new No<TIPO>(elemento,proximNo);
+            noAnterior.setProximo(novoNo);
+            this.tamanho++;
+        }
+
+    }
+
+    private void adicionaInicio(TIPO elemento){
+        if(this.tamanho == 0){
+            No<TIPO> novoNo = new No<TIPO>(elemento);
+            this.inicio = novoNo;
+            this.ultimo = novoNo;
+        }else{
+            No<TIPO> novoNo = new No<TIPO>(elemento, this.inicio);
+            this.inicio = novoNo;
+        }
+
+        this.tamanho++;
+    }
+
     /* Método para obter o tamanho da lista */
     public int getTamanho(){
         return this.tamanho;
