@@ -25,5 +25,10 @@ public class TesteListaEncadeada2 {
         System.out.println("Inserir no final:");
         nomes.adicionar(4, "NovoNome3");
         System.out.println("Nomes: "+ nomes +"\n");
+
+        System.out.println("\nRemover do início:");
+        System.out.println("Rmovido: "+ nomes.removerInicio());
+        System.out.println("Nomes: "+ nomes +"\n");
+
     }
 }

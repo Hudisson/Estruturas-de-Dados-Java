@@ -37,9 +37,9 @@ public class ListaEncadeada<TIPO> {
             this.adicionar(elemento);
 
         }else{ // adicionar no meio
-            No<TIPO> noAnterior = this.bucarNo(posicao);
-            No<TIPO> proximNo = noAnterior.getProximo();
-            No<TIPO> novoNo = new No<TIPO>(elemento,proximNo);
+            No<TIPO> noAnterior = this.buscarNo(posicao);
+            No<TIPO> proximoNo = noAnterior.getProximo();
+            No<TIPO> novoNo = new No<TIPO>(elemento,proximoNo);
             noAnterior.setProximo(novoNo);
             this.tamanho++;
         }
@@ -59,13 +59,32 @@ public class ListaEncadeada<TIPO> {
         this.tamanho++;
     }
 
+    /* Método para remover do início */
+    public TIPO removerInicio(){
+
+        if(this.tamanho == 0){
+            throw new RuntimeException("A lista está vazia.");
+        }
+
+        TIPO removido = this.inicio.getElemento();
+        this.inicio = inicio.getProximo();
+        this.tamanho--;
+
+        if(this.tamanho == 0){ // se o tamanho passa a ser zero depois que remover o elemento
+            this.ultimo = null;
+        }
+
+        return removido;
+
+    }
+
     /* Método para obter o tamanho da lista */
     public int getTamanho(){
         return this.tamanho;
     }
 
     /* Busca na lista por posição e retorna o elemento */
-    private No<TIPO> bucarNo(int posicao){
+    private No<TIPO> buscarNo(int posicao){
 
             if(!(posicao >= 0 && posicao <= this.tamanho)){
             throw new IllegalArgumentException("NÃO EXISTE");
@@ -80,7 +99,7 @@ public class ListaEncadeada<TIPO> {
     }
 
     public TIPO buscarPosicao(int posicao){
-        return this.bucarNo(posicao).getElemento();
+        return this.buscarNo(posicao).getElemento();
     }
 
     /* Pesquisa se um determinado elemento existe na lista  */
