@@ -59,7 +59,7 @@ public class ListaEncadeada<TIPO> {
         this.tamanho++;
     }
 
-    /* Método para remover do início */
+    /* Método para remover do início da lista */
     public TIPO removerInicio(){
 
         if(this.tamanho == 0){
@@ -76,6 +76,29 @@ public class ListaEncadeada<TIPO> {
 
         return removido;
 
+    }
+
+    /* Método para remover do final da lista */
+    public TIPO removerFinal(){
+
+        if(this.tamanho == 0){
+            throw new RuntimeException("A lista está vazia.");
+        }
+
+        if(this.tamanho == 1){
+            return this.removerInicio();
+        }
+
+        TIPO removido = this.ultimo.getElemento();
+        this.ultimo = buscarNo(this.tamanho-1);
+        this.ultimo.setProximo(null);
+        this.tamanho--;
+
+        if(this.tamanho == 0){ // se o tamanho passa a ser zero depois que remover o elemento
+            this.ultimo = null;
+        }
+
+        return removido;
     }
 
     /* Método para obter o tamanho da lista */
