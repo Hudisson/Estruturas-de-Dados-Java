@@ -101,6 +101,28 @@ public class ListaEncadeada<TIPO> {
         return removido;
     }
 
+    /* Método para remover de qualquer posição */
+    public TIPO remover(int posicao){
+
+        if(posicao < 0 || posicao > this.tamanho){
+            throw new IllegalArgumentException("Posição inválida");
+        }
+
+        if(posicao == 0){ return removerInicio(); }
+        if(posicao == this.tamanho){ return removerFinal(); }
+
+        TIPO removido = this.buscarNo(posicao).getElemento();
+
+        No<TIPO> noAterior = this.buscarNo( posicao -1);
+        No<TIPO> noAtual = noAterior.getProximo();
+        No<TIPO> proximo = noAtual.getProximo();
+        noAterior.setProximo(proximo);
+        noAtual.setProximo(null);
+        this.tamanho--;
+
+        return removido;
+    }
+
     /* Método para obter o tamanho da lista */
     public int getTamanho(){
         return this.tamanho;

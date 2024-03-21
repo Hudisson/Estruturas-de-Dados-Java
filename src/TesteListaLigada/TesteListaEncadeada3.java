@@ -15,8 +15,13 @@ public class TesteListaEncadeada3 {
         System.out.println("\nLetras: "+letras);
         System.out.println("Tamanho: "+letras.getTamanho());
 
-        System.out.println("\nRemover do final");
-        System.out.println("Removido: "+letras.removerFinal());
+        // System.out.println("\nRemover do final");
+        // System.out.println("Removido: "+letras.removerFinal());
+        // System.out.println("Letras: "+letras);
+        // System.out.println("Tamanho: "+letras.getTamanho());
+
+        System.out.println("\nRemover de qualquer posiçao");
+        System.out.println("Removido: "+letras.remover(3));
         System.out.println("Letras: "+letras);
         System.out.println("Tamanho: "+letras.getTamanho());
     }
